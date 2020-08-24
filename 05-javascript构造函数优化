@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 定义一个对象
+    let fns = {
+        name:function () {
+            console.log("lo");
+            alert("sad ");
+        }
+    };
+    console.log(fns.name);
+    // fns.name 都是属于同一个对象，所以返回true。
+    console.log(fns.name === fns.name);
+
+//    构造函数优化
+    function People(myname,myage) {
+        this.name = myname;
+        this.age = myage;
+        this.P = '构造函数中的type';
+        this.say = function () {
+            console.log("构造函数中的say");
+        }
+    }
+    // 使用.prototype 可以解决性能的问题，还能解决全局命名匮乏的问题
+    //用用于保存公共函数，公共变量
+    People.prototype = {
+        //为了不破坏原有的关系，在给prototype赋值的时候，
+        //需要手动添加constructor属性，加上构造函数名称
+        constructor:People,
+        P:"人",
+        say:function () {
+            console.log("hello");
+        }
+    };
+    let obj1 = new  People("LNJ",33);
+    let obj2 = new  People("LG",23);
+    obj1.say();
+    console.log(obj1.prototype);
+    console.log(obj2);
+    
+</script>
+</html>
