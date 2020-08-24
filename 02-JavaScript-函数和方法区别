@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript-函数和方法区别</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 1.什么是函数?
+    // 函数就是没有和其它的类显示的绑定在一起的,我们就称之为函数
+    function en() {
+        console.log("hello enen");
+        console.log(this);
+    }
+    en();
+
+//    2.什么是方法
+//    方法就是和其它的类显示的绑定在一起的,我们就称之为方法
+//    类是什么？ 对象又称类，包裹各种对象属性和行为
+    let obj = {
+        name:"error",
+        age:18,
+        ha:function () {
+            console.log("haha");
+            // console.log(this);
+        }
+    };
+    //3.函数和方法的区别
+    //方法不能像函数一样直接调用,方法得加上对象名称
+    //3.2函数内部的this输出的是window,方法内部的this输出的是当前调用的那个对象
+    // obj.ha();
+
+    //4,无论是函数还是方法,内部都有一个叫做this的东东
+    // this是什么?谁调用了当前的函数或者方法,那么当前的this就是谁
+
+   obj.ha();
+</script>
+</html>
