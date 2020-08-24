@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+    1.什么是构造函数?
+    构造函数和工厂函数一样,都是专门用于创建对象的.
+    构造函数本质上是工厂函数的简写.
+*/
+
+    // 2.构造函数和工厂函数的区别
+    // 2.1构造函数的函数名称首字母必须大写
+    function People(myName,myAge) {
+        //创建一个对象中name的属性，赋值给myName参数
+        this.name = myName;
+        this.age = myAge;
+        //创建一个对象中say的行为(俗称函数)
+        this.say = function () {
+            console.log("hello");
+        }
+    }
+    // 2.2构造函数只能够通过new来调用 调用函数名称，加上参数
+    let obj1 = new People("LNJ",33);
+    let obj2 = new People("LG",13);
+    console.log(obj1);
+    console.log(obj2);
+
+</script>
+</html>
