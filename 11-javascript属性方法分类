@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    /*1,在JavaScript中属性和方法分类两类
+    1.1实例属性/实例方法
+    1.2静态属性/静态方法*/
+    function Person() {
+        this.name = "Inj";
+        this.say = function (){
+            console.log("hello world");
+        }
+}
+    //通过构造函数创建的对象,我们称之为"实例对象”
+    let obj = new Person();
+    //通过实例对象"访问"的属性，称为"实例属性"
+    console.log(obj. name);
+    //通过实例对象"访问"的方法，称为"实例方法"
+    obj. say();
+
+    //通过构造函数"创建"的属性，称之为"静态属性"
+    Person.num = 666;
+    //通过构造函数"创建"的方法，称之为"静态方法"
+    Person.run = function () {
+        console.log("跑起来");
+    };
+    console.log(Person.num);
+    Person.run();
+</script>
+</html>
