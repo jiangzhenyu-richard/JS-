@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <img src="../JavaScript-Img/继承性.jpg" height="1080" width="1920"/></head>
+<body>
+
+</body>
+<script>
+    function Person() {
+        this.name = null;
+        this.age = 0;
+        this.say = function () {
+            console.log(this.name, this.age);
+        }
+    }
+    let obj = new Person;
+    obj.name = "LG";
+    obj.age = 33;
+    obj.say();
+    //在企业开发中如果构造函数和构造函数之间的关系是is a关系,那么就可以使用继承来优化代码,来减少代码的冗余度
+    //学生is a人,学生是一个人
+    function Student() {
+        this.name = null;
+        this.age = 0;
+        this.say = function () {
+            console.log(this.name, this.age);
+        };
+        this.score = 0;
+        this.study = function () {
+            console.log("day up");
+        }
+    }
+
+    Student.prototype = new Person() ;
+    Student.prototype.constructor = Student;
+    Student.prototype. run=function(){
+        console.log("run");
+    };
+ /*
+    1. js中继承的终极方法
+    1.1在子类的构造函数中通过cal1借助父类的构造函数
+    function Student(myName, myAge, myScore) {      //Student为子类
+    Person.call(this, myName, myAge);   //Person为父类 使用call方法
+    }
+
+    1.2将子类的原型对象修改为父类的实例对象
+
+    Student.prototype = new Person();
+    */
+
+    let per = new Person();
+    per. run();
+</script>
+</html>
