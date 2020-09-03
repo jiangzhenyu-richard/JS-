@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+    1、强类型语言和弱类型语言区别
+    1.1什么是强类型语言
+    一般“编译型”语言都是强类型语言,强类型语言,要求变量的使用要严格符合定义
+    比如定义一个 int num; 那么num中只能存储整型数据
+    1.2什么是弱类型语言
+    一般“解释型”语言都是弱类型语言,弱类型语言,不会要求变量的使用要严格符合定义
+    例如定义let nym; num中既可以存储整型,也可以存储布尔类型等
+
+    2、什么是多态？
+    2.1多态是指事物的多种状态
+    例如:按下F1键这个动作,如果当前在webstorm界面下弹出的就是webstorm的帮助文档;
+    如果当前在Word下弹出的就是Word帮助;
+    同一个事件发生在不同的对象上会产生不同的结果。
+     */
+
+    function Dog() {
+        this.eat = function () {
+            console.log("狗吃屎");
+        }
+    }
+
+    function Cat() {
+        this.eat = function(){
+            console.log("猫吃大便");
+        }
+    }
+    function feet(animal) {
+        animal.eat();
+    }
+    let dog = new Dog();
+    feet(dog);
+    let cat = new Cat();
+    feet(cat);
+
+</script>
+</html>
