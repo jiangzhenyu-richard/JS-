@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+    1.什么是instanceof关键字?
+    instanceof用于判断"对象”是否是指定构造函数的"实例
+     */
+
+    class Person{
+        name = "LG"
+    }
+    let p =new Person();
+    // 判断p实例对象是否是Person构造函数创建出来的
+    console.log(p instanceof Person);
+
+    class Cat{
+        name = "Miaomiao"
+    }
+    let c = new Cat();
+    //c实例对象不是Person构造函数创建出来的，所以返回false
+    console.log(c instanceof Person);
+
+
+
+    /*
+
+
+     */
+
+
+</script>
+</html>
