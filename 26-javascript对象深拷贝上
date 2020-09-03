@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //实用于基本数据类型
+    class Person{
+        name = "LG";
+        age = 34;
+    }
+    let p1 = new Person ();
+    let p2 = new Object();
+
+    // p2.name = p1.name;
+    // p2.age = p1.age;
+    // console.log(p1.name, p2.name);
+
+    // 浅拷贝改成深拷贝 第一种方式
+    // p2.name = "zd";
+    // console.log(p2.name);
+
+    // 如果需要修改一百个变量，这种方法太慢，所以用for循环
+    // 浅拷贝改成深拷贝 第二种方式 遍历p2的值赋值给haha变量
+    /*for (let haha in p2){
+        // p1的值 赋值 给p2
+        p2[haha] = p1[haha];
+    }*/
+    //浅拷贝修改为深拷贝
+    // p2.name = "ljn";
+    //浅拷贝改成深拷贝 第三种方式
+    //object是新开辟的空间， assign（）是将p1的属性复制给p2
+    Object.assign(p2,p1);
+    p2.name = "LGLGLGLG";
+    console.log(p1);
+    console.log(p2);
+
+</script>
+</html>
