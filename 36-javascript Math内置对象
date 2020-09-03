@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+    Math. floor()向下取整
+    Math. ceil()向上取整
+    Math. round ()四舍五入
+    Math. abs ()绝对值
+    Math. random()生成随机数
+     */
+
+    //Math. floor()向下取整
+    let num = 6.99;
+    let value = Math.floor(num);
+    console.log(value);
+
+    //    Math. ceil()向上取整
+    let num1 = 6.00001;
+    let value1 = Math.ceil(num1);
+    console.log(value1);
+
+    //    Math. round ()四舍五入
+    let num2 = 6.556;
+    let value2 = Math.round(num2);
+    console.log(value2);
+
+    //    Math. abs ()绝对值
+    let num3 = -6.156;
+    let value3 = Math.abs(num3);
+    console.log(value3);
+
+    //    Math. random()生成随机数
+    let num4 = 6.156;
+    let value4 = Math.random();
+    console.log(value4);
+
+    //需求：生成一个0到10的随机数
+    // 从random MDN 文档中拿到的
+    function getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+    }
+
+    console.log(getRandomIntInclusive(0, 10));
+
+
+    /*
+    let num5 = 6.156;
+    let value5 = Math.floor(num5);
+    console.log(value5);
+
+    let num6 = 6.156;
+    let value6 = Math.floor(num6);
+    console.log(value6);*/
+</script>
+</html>
