@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 1,什么是isPrototypeof属性？
+    // isPrototypeor用于判断一个对象是否是另一个对象的原型
+    class Person{
+        name = "LG";
+    }
+    let p =new Person;
+    // 判断Person的原型是否等于 实例对象p
+    console.log(Person.prototype.isPrototypeOf(p));
+
+</script>
+</html>
