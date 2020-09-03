@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr =[11,22,33,44,55];
+
+
+    //1.数组的filter方法 接收一个函数 函数中接收参数 数组的过滤
+    //将满足条件的元素添加到一个新的数组中
+    let ARR = arr.filter(function (A,B,C) {
+        console.log(A, B, C);
+        if (A>22){
+            return true;
+        }
+    });
+    console.log(ARR);   //[33,44,55]
+
+    //2.数组中的map方法  数组的映射
+    let ARR1 = arr.map(function (A,B,C) {
+        console.log(A, B, C);
+        //满足条件输出true,未满足输出undefined
+        if (A>22){
+            return true;
+        }
+    });
+    console.log(ARR1);
+</script>
+</html>
