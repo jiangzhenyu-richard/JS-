@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr = ["George","Thomas","Martin","Adrew"];
+    // 数组升序排列
+    arr.sort();
+    console.log(arr);
+
+    let arr1 = [2,1,6,3,5];
+    //数组降序排列
+    arr1.sort(function (a,b) {
+        if (a>b){
+            return -1;
+        }
+    });
+    console.log(arr1);
+    //数组字符串长度排序
+    let arr2 = ["1234", "21", "54321", "123", "6"];
+    arr2.sort(function (a,b) {
+        // 数组升序
+        return a.length-b.length;
+        // 数组降序
+        // return b.length-a.length;
+    });
+    console.log(arr2);
+
+    let students = [
+    {name: "25", age: 34},
+    {name: "1s", age: 18},
+    {name: "ww", age: 22},
+    {name: "mm", age: 28}
+];
+    students.sort(function (a,b) {
+        //对象升序排列
+        // return a.age-b.age;
+        //对象降序排列
+        return b.age - a.age;
+    });
+    console.log(students);
+
+</script>
+</html>
