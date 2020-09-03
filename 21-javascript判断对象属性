@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //判断对象中是否有某个对象有两种方式
+
+    class Person{
+        name = "LG";
+        age = 19;
+    }
+    Person.prototype.height = 0;
+    let p = new Person();
+    //判断某一个对象是否拥有某一个属性
+    // "name"是属性， p是实例对象
+    //这是第一种，可以判断 “类” 和 “原型”
+    console.log("name" in p);   //true
+    console.log("aa" in p);  //false
+    // 原型对象也可以判断
+    console.log("height" in p);//true
+
+    //需求：判断“对象本身”是否拥有某个属性  注（就是不会去原型对象中查找）
+    // 这是第二种,可以判断"类"
+    console.log(p.hasOwnProperty("age"));   //true
+    console.log(p.hasOwnProperty("height"));   //false  不会去原型中查找
+
+
+</script>
+</html>
