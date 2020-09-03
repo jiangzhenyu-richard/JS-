@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //ES6开始的继承
+    // 1.1在子类后面添加extends并指定父类的名称
+    // 1.2在子类的constructor构造函数中通过super方法借助父类的构造函数
+    // 父类
+    class Person{
+        constructor(myName,myAge){
+            this.name = myName;
+            this.age = myAge;
+        }
+        say(){
+            console.log(this.name, this.age);
+        }
+    }
+    // Student类 继承于Person类， 所以Student是子类
+    class Student extends Person{
+        constructor(myName, myAge, myScore,){
+            // 1.在子类中通过call/apply方法借助父类的构造函数
+            // Person. cal1(this, myName, myAge); 等同于下面
+            super(myName,myAge);
+            this.score = myScore;
+        }
+        study(){
+            console.log ("day day up");
+        }
+    }
+    let stu = new Student("zs",18,99);
+    console.log(stu);
+    stu.say();
+</script>
+</html>
