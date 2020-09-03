@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+    1. this是什么?
+    谁调用当前函数或者方法, this就是谁
+    2,这三个方法的作用是什么?
+    这三个方法都是用于修改函数或者方法中的this的
+    2.1 bind方法作用
+    2.2. cal1方法作用
+    2.3. apply方法作用
+     */
+
+    function FA() {
+        console.log(this);
+    }
+    FA();
+</script>
+</html>
