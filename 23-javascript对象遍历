@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //重点壹：ES6定义函数不会输出方法，ES6之前定义的函数能够输出方法
+    //重点贰： console.log(p[key]); 这是取出实例对象p中所有的属性和方法
+    // 而console.log(p.key);是取出实例对象p中为key的值
+
+    /*
+    如何遍历一个对象?
+    在JS中可以通过高级for循环来遍历对象
+    以下代码的含义:将指定对象中所有的属性和方法的名称取出来了依次的赋值给key这个变量
+    for(1et key in obj){  }
+     */
+
+    /*class Person{
+        constructor(myName,myAge){
+            this.name = myName;
+            this.age = myAge;
+        }
+        //ES6定义类的格式，会将方法默认放到原型对象中
+        say(){
+            console.log(this.name, this.age);
+        }
+    }*/
+    // 通过ES6之前的构造函数写法，可以遍历方法
+    function Person(myName,myAge){
+        this.name = myName;
+        this.age = myAge;
+        this.say = function () {
+            console.log("hi");
+        }
+    }
+
+    let p = new Person("LNJ",33);
+    console.log(p);
+    //将p中所有的属性和方法的名称取出来了依次的赋值给key这个变量
+    for(let key in p){
+        //ES6定义类的格式，会将方法默认放到原型对象中，所以不会遍历出say()方法
+        // console.log(key);
+
+        //需求：如果不想输出方法，可写一个跳过方法的函数
+        //判断p中是否有方法
+        if (p[key] instanceof Function){
+            // 有的话 就跳过这个方法
+            continue;
+        }
+
+        //注意点:以下代码的含义取出p对象中名称叫做当前遍历到的名称的属性或者方法的取出
+         console.log(p[key]); // p["name"] / pL"age"] / p["say"]
+
+        //注意点:以下代码的含义取出p对象中名称叫做key的属性的取值
+        // console.log(p.key); // undefined
+
+    }
+
+</script>
+</html>
