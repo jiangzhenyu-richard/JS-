@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <img src="../JavaScript-Img/浅拷贝.jpg" height="531" width="1282"/></head>
+<body>
+
+</body>
+<script>
+    /*
+    1,什么是深拷贝什么是浅拷贝?
+    1.1深拷贝修改新变量的值不会影响原有变量的值
+    默认情况下基本数据类型都是深拷贝
+
+    1.1浅拷贝
+    修改新变量的值会影响原有的变量的值
+    默认情况下引用类型都是浅拷贝
+    */
+
+    // 深拷贝
+    let num1 = 123;
+    let num2 = num1;
+    //这时 num1的数据赋值给了num2,但是num1和num2不在同一个存储空间里
+    console.log(num1, num2);
+    // 此时 num2的值已经被修改,但不会影响原有变量的值
+    // 这就是深拷贝
+    num2 = 666;
+    console.log(num1, num2);
+    //这是浅拷贝
+    class Person {
+        name = "Inj";
+        age = 34;
+    }
+    let pl = new Person();
+    let p2 = pl;
+    //修改新变量的值会影响原有的变量的值
+    p2. name ="zs";
+    console.log(pl.name);
+    console.log(p2. name);
+
+
+
+</script>
+
+</html>
