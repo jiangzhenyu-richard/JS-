@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <img src="../JavaScript-Img/1598336890(1).jpg" height="1080" width="1920"/>
+
+    <img src="../JavaScript-Img/1598337893(1).jpg" height="1080" width="1920"/>
+</head>
+<body>
+
+</body>
+<script>
+    function Person() {
+        this.name = null;
+        this.age = 0;
+        this.say = function () {
+            console.log(this.name, this.age);
+        }
+    }
+    let obj = new Person;
+    obj.name = "LG";
+    obj.age = 33;
+    obj.say();
+    //在企业开发中如果构造函数和构造函数之间的关系是is a关系,那么就可以使用继承来优化代码,来减少代码的冗余度
+    //学生is a人,学生是一个人
+    function Student() {
+        this.name = null;
+        this.age = 0;
+        this.say = function () {
+            console.log(this.name, this.age);
+        };
+        this.score = 0;
+        this.study = function () {
+            console.log("day up");
+        }
+    }
+
+
+    // 继承， 把Student中的原型对象 赋值给 Person 构造函数
+    Student.prototype = new Person();
+    //把原型对象默认值.constructor赋值给当前的（Student）构造函数
+    Student.prototype.constructor = Student;
+
+    let obj1 = new Student();
+    obj1.name = "Jiangzhenyu";
+    obj1.age = 19;
+    obj1.say();
+    obj1.score = 99+"分";
+    console.log(obj1.score);
+    obj1.study();
+
+
+
+//    继承性的终极方案
+
+</script>
+</html>
