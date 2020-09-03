@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr = [3,2,6,7,6];
+
+    //查找索引为6的元素
+    // let index1 = arr.indexOf(6);
+    // console.log(index1);
+
+    //查找元素，有返回true，没有返回false
+    // let index1 = arr.includes(-6);
+    //  console.log(index1);
+
+    //数组的findIndex方法：定制版的indexOf,找到返回索引，找不到返回-1（false）
+    //findIndex(定义一个函数（查找元素，查找索引，查找数组）)
+    let index = arr.findIndex(function (A,B,C) {
+        // console.log(A, B, C);
+        // 如果元素中有7，那么返回索引值
+        if (A === 7){
+            return true;
+        }
+    });
+    // 如果元素中有7，那么返回索引值，打印
+    console.log(index);
+
+    //数组的find方法,找到当前数组的元素，找到返回元素，找不到返回undefined
+   let AC =  arr.find(function (A,B,C) {
+        console.log(A, B, C);
+        if (A === 77){
+            return true;
+        }
+    });
+    console.log(AC);
+
+
+</script>
+</html>
