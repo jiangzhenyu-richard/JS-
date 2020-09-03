@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+    1,在ES6之前如果定义一个类?
+    通过构造函数来定义一个函数
+    */
+    /*
+      这些都是ES6之前的
+    function Person(myName,myAge) {
+        // 实例属性
+        // this.name = "LNJ";
+        // this.age = 33;
+        this.name = myName;
+        this.age = myAge;
+
+        //实例方法
+        this.say = function () {
+            console.log(this.name,this.age);
+        }
+    }
+    //静态属性：通过构造函数创建的属性叫静态属性
+    Person.num = 666;
+    //静态方法：通过构造函数创建的方法叫静态方法
+    Person.run = function(){
+        console.log("run起来");
+    };
+    console.log(Person.num);
+    Person.run();
+
+
+    // let p =new Person();
+    let p =new Person("zs",13);
+    p.say();
+    */
+
+    /*
+    从ES6开始，系统开始提供一个名称叫class的关键字，这个关键字用于定义类
+     */
+    /*
+    class Person{
+        //当我们通过new创建对象的时候,系统会自动调用constructor
+        constructor(myName, myAge) {
+            this. name = myName;
+            this. age = myAge;
+        }
+        //实例属性
+        // name = "LG";
+        // age = 33;
+        //实例方法
+        say(){
+            console.log(this.name,this.age);
+        }
+        //静态属性(附属于Person构造函数中)
+        static num = 666;
+        //静态方法(附属于Person构造函数中)
+        static run(){
+            console.log("run起来啊");
+        }
+    }
+
+   let p = new Person("zs",13);
+    p.say();
+    p.say();
+    console.log(Person.num);
+    Person.run();
+*/
+/* ES6之前写法
+    function Person(myName,myAge) {
+        //实例属性
+        this.name = myName;
+        this.age = myAge;
+        this.hi = function () {
+            console.log("hi");
+        };
+    }
+    Person.prototype.say = function () {
+        console.log(this.name, this.age);
+    };
+    let p = new Person();
+    console. log(p);
+    */
+/* ES6写法
+    class Person{
+        constructor(myName,myAge){
+            this.name = myName;
+            this.age = myAge;
+            this.hi = function () {
+                console.log("hi");
+            }
+        }
+        say(){
+            console.log("say,hi");
+        }
+    }
+    let p1 =new Person("LNG",33);
+    p1.say();
+    console.log(p1);
+*/
+
+</script>
+</html>
