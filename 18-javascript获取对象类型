@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+/*
+* 获取对象真实类型
+ */
+    let obj = new Object();
+    console.log(obj);   //Object
+    //获取构造函数的名称
+    console.log(obj.constructor.name);
+    let arr = new Array();
+    console.log(arr);//Object
+    //获取构造函数的名称
+    console.log(arr.constructor.name);
+    let p = new String();
+    console.log(typeof p);//Object
+    //获取构造函数的名称
+    console.log(p.constructor.name);
+
+</script>
+
+</html>
